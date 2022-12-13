@@ -4,7 +4,7 @@ function hf($bytes, $decimals = 2) {
     $factor = floor((strlen($bytes) - 1) / 3);
     return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$size[$factor];
 }
-$res = shell_exec("/usr/bin/yt-dlp -j -S '+size,+br' '$mtext'");
+$res = shell_exec("/usr/bin/yt-dlp -j -S '+size,+br' '$mtex'");
 $re = json_decode($res);
 if (isset($re->formats)){
 	$is = $re->webpage_url;

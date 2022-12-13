@@ -5,7 +5,7 @@ $mtext=$update->message->text;
 $cid=$update->message->chat->id;
 if (strpos(ltrim($mtext), 'http') !== false){
 	$sp=strpos($mtext,"http");
-	$mtext=substr($mtext,$sp);
+	$mtex=substr($mtext,$sp);
 	include "vid.php";
 }
 ?>
