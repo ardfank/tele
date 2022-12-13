@@ -8,23 +8,30 @@ $res = shell_exec("/usr/bin/yt-dlp -j -S '+size,+br' '$mtext'");
 $re = json_decode($res);
 if (isset($re->formats)){
 	$is = $re->webpage_url;
-	$isi = urlencode("$is\n");
+	$isi = str_replace("_","\_",urlencode($is));
 	file_get_contents("https://api.telegram.org/bot643980945:AAHrLThQ0-TCWPbptE1dy2VEX9NlUXI3KTg/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown");
-	$i=0;
+	$i=0;$ky=[];
 	foreach($re->formats as $fo){
-		$ky['inline_keyboard']=[];
 		$ext = $fo->ext;
 		$rs=$fo->resolution;
-		if($i<50 && (strpos($ext,'html')) === false && (strpos($rs,'audio')) === false){
+		$ac=$fo->acodec;
+		if((strpos($ext,'html')) === false && (strpos($rs,'audio')) === false && $ac !== "none"){
 			$nm=(isset($fo->format_note))?$fo->format_note:$fo->format;
-			$fs=(isset($fo->filesize))?(int)$fo->filesize:0;
+			$fs=(isset($fo->filesize))?(int)$fo->filesize:$fo->filesize_approx;
 			$ur=urlencode($fo->url);
-			$ky['inline_keyboard'][]=[['text'=>"Download",'url'=>"$ur"]];
-			$rm = json_encode($ky);
-			$isi = urlencode("$nm $ext (".hf($fs)." ; ".$rs.")");
-			file_get_contents("https://api.telegram.org/bot643980945:AAHrLThQ0-TCWPbptE1dy2VEX9NlUXI3KTg/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown&reply_markup=$rm");
+			$ky['inline_keyboard'][]=[['text'=>"$nm $ext (".hf($fs)." ; ".$rs.")",'url'=>"$ur"]];
+			if($i % 6 === 5){
+				$isi = urlencode("~ ");
+				$rm = json_encode($ky);
+				file_get_contents("https://api.telegram.org/bot643980945:AAHrLThQ0-TCWPbptE1dy2VEX9NlUXI3KTg/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown&reply_markup=$rm");
+				$ky=[];$isi='';$rm="";
+			}
 			$i++;
 		}
 	}
+		$isi = urlencode("~ ");
+		$rm = json_encode($ky);
+		file_get_contents("https://api.telegram.org/bot643980945:AAHrLThQ0-TCWPbptE1dy2VEX9NlUXI3KTg/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown&reply_markup=$rm");
+		echo $res;
 }else{$isi = "Salah format";}
 ?>

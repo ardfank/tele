@@ -8,7 +8,7 @@ $cid=$update->message->chat->id;
 if (strpos(ltrim($mtext), 'http') !== false){
 	include "vid.php";
 }
-file_put_contents("log/notif.json", "$content");
+// file_put_contents("log/notif.json", "$content");
 ?>
 
 
