@@ -1,8 +1,8 @@
 {
-  "manifest_version": 2,
-  "name": "UrbanDictionary Search",
-  "short_name": "Search",
-  "description": "Searches for the selected text in the UrbanDictionary",
+  "manifest_version": 3,
+  "name": "VOW Preview",
+  "short_name": "VOW",
+  "description": "VOW Preview",
   "version": "0.0.1",
   "minimum_chrome_version": "38",
   "permissions": [
@@ -11,5 +11,5 @@
   "icons": {
     "16": "search.png"
   },
-  "background": {"page": "background.html"}
+  "background": {"pages": "background.html"}
 }
