@@ -1,2 +1,2 @@
-{"update_id":660374636,
-"inline_query":{"id":"1264310671545213624","from":{"id":294370267,"is_bot":false,"first_name":"Saya","username":"entaahlaah","language_code":"en"},"chat_type":"supergroup","query":"https://www.youtube.com/watch?v=9aqVSkh_4P8","offset":""}}
+{"update_id":660374637,
+"message":{"message_id":100609,"from":{"id":294370267,"is_bot":false,"first_name":"Saya","username":"entaahlaah","language_code":"en"},"chat":{"id":-1001247169738,"title":"Tonasa NMS","type":"supergroup"},"date":1671018484,"text":"/vid https://www.youtube.com/watch?v=9aqVSkh_4P8","entities":[{"offset":0,"length":4,"type":"bot_command"},{"offset":5,"length":43,"type":"url"}]}}
