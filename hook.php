@@ -8,6 +8,7 @@ if (strpos(ltrim($mtext), 'http') !== false){
 	$mtex=substr($mtext,$sp);
 	include "vid.php";
 }
+file_put_contents("log/notif.json", "$content");
 ?>
 
 
