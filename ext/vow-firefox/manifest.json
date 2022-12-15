@@ -3,12 +3,12 @@
   "name": "VOW Preview",
   "short_name": "VOW",
   "description": "Preview Video",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "permissions": [
     "contextMenus", 
     "tabs"],
   "icons": {
-    "16": "search.png"
+    "16": "favicon.png"
   },
   "background": {"page": "background.html"},
   "browser_specific_settings": {
