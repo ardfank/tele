@@ -3,7 +3,7 @@
   "name": "VOW Preview",
   "short_name": "VOW",
   "description": "Preview Video",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "permissions": [
     "contextMenus", 
     "tabs"],
