@@ -3,14 +3,17 @@
   "name": "VOW Preview",
   "short_name": "VOW",
   "description": "Preview Video",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "permissions": [
     "contextMenus", 
     "tabs"],
   "icons": {
-    "16": "favicon.png"
+    "16": "pocut16.png",
+    "128": "pocut.png"
   },
-  "background": {"page": "background.html"},
+  "background": {
+    "scripts": ["main.js"]
+  },
   "browser_specific_settings": {
 	  "gecko": {
 		"id": "vow@sa.ya",

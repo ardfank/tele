@@ -1,15 +1,16 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "VOW Preview",
   "short_name": "VOW",
   "description": "VOW Preview",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "minimum_chrome_version": "56",
   "permissions": [
     "contextMenus", 
     "tabs"],
   "icons": {
-    "16": "favicon.png"
+    "16": "pocut128.png",
+	"128": "pocut128.png"
   },
-  "background": {"page": "background.html"}
+  "background": {"service_worker": "main.js", "type": "module"}
 }
