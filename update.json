@@ -1,0 +1,40 @@
+{
+  "addons": {
+    "vow@sa.ya": {
+      "updates": [
+        {
+          "version": "0.0.1",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.0.1.xpi"
+        },
+		{
+          "version": "0.0.3",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.0.3.xpi"
+        },
+		{
+          "version": "0.0.4",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.0.4.xpi"
+        },
+		{
+          "version": "0.0.5",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.0.5.xpi"
+        },
+		{
+          "version": "0.0.6",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.0.6.xpi"
+        },
+		{
+          "version": "0.0.7",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.0.7.xpi"
+        },
+		{
+          "version": "0.0.9",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.0.9.xpi"
+        },
+		{
+          "version": "0.1.0",
+          "update_link": "https://gps.networkreverse.com/tele/ext/vow-0.1.0.xpi"
+        },
+      ]
+    }
+  }
+}
