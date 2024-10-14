@@ -9,7 +9,7 @@ $re = json_decode($res);
 if (isset($re->formats)){
 	$is = $re->webpage_url;
 	$isi = str_replace("_","\_",urlencode($is));
-	file_get_contents("https://api.telegram.org/bot643980945:AAHrLThQ0-TCWPbptE1dy2VEX9NlUXI3KTg/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown");
+	file_get_contents("https://api.telegram.org/${{ secrets.TBOTE }}/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown");
 	$i=0;$ky=[];
 	foreach($re->formats as $fo){
 		$ext = $fo->ext;
@@ -23,7 +23,7 @@ if (isset($re->formats)){
 			if($i % 6 === 5){
 				$isi = urlencode("~ ");
 				$rm = json_encode($ky);
-				file_get_contents("https://api.telegram.org/bot643980945:AAHrLThQ0-TCWPbptE1dy2VEX9NlUXI3KTg/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown&reply_markup=$rm");
+				file_get_contents("https://api.telegram.org/${{ secrets.TBOTE }}/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown&reply_markup=$rm");
 				$ky=[];$isi='';$rm="";
 			}
 			$i++;
@@ -31,7 +31,7 @@ if (isset($re->formats)){
 	}
 		$isi = urlencode("~ ");
 		$rm = json_encode($ky);
-		file_get_contents("https://api.telegram.org/bot643980945:AAHrLThQ0-TCWPbptE1dy2VEX9NlUXI3KTg/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown&reply_markup=$rm");
+		file_get_contents("https://api.telegram.org/${{ secrets.TBOTE }}/sendMessage?chat_id=$cid&text=$isi&parse_mode=Markdown&reply_markup=$rm");
 		echo $res;
 }else{$isi = "Salah format";}
 ?>
